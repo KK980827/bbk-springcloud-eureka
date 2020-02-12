@@ -1,0 +1,12 @@
+server:
+  port: 28761
+
+eureka:
+  instance:
+    hostname: XXX
+  client:
+    # 通过registerWithEureka=false和fetchRegistry=false来表明自己是一个eureka server，不再尝试去别的Eureka进行注册
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
